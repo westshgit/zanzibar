@@ -16,6 +16,7 @@ required-features = ["env"]
 
 
 [features]
+default = ["env"]
 env = ["dep:dotenvy", "dep:figment"]
 
 
