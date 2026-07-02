@@ -1,0 +1,40 @@
+[package]
+name = "zanzibar"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "toasty-cli"
+path = "src/bin/toasty-cli.rs"
+required-features = ["env"]
+
+[[bin]]
+name = "zanzibar"
+path = "src/main.rs"
+required-features = ["env"]
+
+
+[features]
+env = ["dep:dotenvy", "dep:figment"]
+
+
+[dependencies]
+anyhow = "1.0.103"
+axum = "0.8.9"
+serde = "1.0.228"
+serde_json = "1.0.150"
+tokio = { version = "1.38.0", features = ["full"] }
+tracing = "0.1.44"
+tracing-subscriber = "0.3.23"
+toasty = { git = "https://github.com/tokio-rs/toasty.git", package = "toasty", features = [
+    "postgresql",
+] }
+toasty-cli = { git = "https://github.com/tokio-rs/toasty.git", package = "toasty-cli" }
+derive-new = "0.7.0"
+typed-builder = "0.23.2"
+figment = { version = "0.10.19", features = ["env"], optional = true }
+dotenvy = { version = "0.15.7", optional = true }
+
+
+[patch.crates-io]
+toasty-postgresql = { git = "https://github.com/tokio-rs/toasty.git", package = "toasty-driver-postgresql" }
