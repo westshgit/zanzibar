@@ -2,6 +2,7 @@
 name = "zanzibar"
 version = "0.1.0"
 edition = "2024"
+description = "A demonstration of Google's Zanzibar system"
 
 [[bin]]
 name = "toasty-cli"
@@ -28,12 +29,15 @@ tracing = "0.1.44"
 tracing-subscriber = "0.3.23"
 toasty = { git = "https://github.com/tokio-rs/toasty.git", package = "toasty", features = [
     "postgresql",
+    "jiff",
 ] }
 toasty-cli = { git = "https://github.com/tokio-rs/toasty.git", package = "toasty-cli" }
 derive-new = "0.7.0"
 typed-builder = "0.23.2"
 figment = { version = "0.10.19", features = ["env"], optional = true }
 dotenvy = { version = "0.15.7", optional = true }
+jiff = { version = "0.2.31", features = ["serde"] }
+uuid = { version = "1.23.4", features = ["v4", "serde"] }
 
 
 [patch.crates-io]

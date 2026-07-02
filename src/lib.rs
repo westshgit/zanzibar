@@ -13,6 +13,10 @@ extern crate typed_builder;
 #[macro_use]
 extern crate serde;
 
+#[macro_use]
+extern crate toasty;
+
+pub mod models;
 pub mod toasty_database;
 
 #[derive(Debug, Clone, Serialize, Deserialize, new, TypedBuilder)]
